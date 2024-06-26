@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiBlogUdla.Pages.LoginUsuarioPage"
+            
              Title="LoginUsuarioPage"
             
              >
@@ -54,7 +55,7 @@
                     
                     
                     <Entry x:Name="usernameEntry"
-                           Text="txtUsername"
+                           Text="{Binding Username}"
                            TextColor="Black"
                            Placeholder="social.udla@udla.edu.ec"
                            FontSize="13"
@@ -78,7 +79,7 @@
                        Padding="8"
                        Margin="25,0,25,50">
                     <Entry x:Name="passwordEntry"
-                           Text="txtpassword"
+                           Text="{Binding password}"
                            TextColor="Black"
                            Placeholder="SocialUdla2024."
                            IsPassword="True"

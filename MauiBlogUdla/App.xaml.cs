@@ -9,15 +9,16 @@ namespace MauiBlogUdla
 {
     public partial class App : Application
     {
-        static SQLiteData _bancoDatos;
+        static SQLiteData? _bancoDatos;
      public static SQLiteData BancoDatos {
 
             get
             {
                 if (_bancoDatos == null)
                 {
-                    _bancoDatos =
-                        new SQLiteData(DependencyService.Get<ISQLiteBD>().SQLiteLocalPath("Datos.db"));
+                    _bancoDatos = new SQLiteData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Datos.db"));
+                   /* _bancoDatos =
+                        new SQLiteData(DependencyService.Get<ISQLiteBD>().SQLiteLocalPath("Datos.db"));*/
                 }
                 return _bancoDatos;
             }
@@ -29,7 +30,7 @@ namespace MauiBlogUdla
             InitializeComponent();
 
           
-        MainPage = new NavigationPage(new LoginUsuarioPage());  
+        MainPage = new NavigationPage(new HomePage());  
         }
     }
 }

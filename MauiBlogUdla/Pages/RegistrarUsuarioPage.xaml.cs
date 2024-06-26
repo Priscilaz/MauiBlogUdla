@@ -15,7 +15,7 @@ public partial class RegistrarUsuarioPage : ContentPage
 
     private async void ClickRegistrarse(object sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(_usuario.Username) && string.IsNullOrEmpty(_usuario.Password)) {
+        if (string.IsNullOrWhiteSpace(_usuario.Username) && string.IsNullOrEmpty(_usuario.Password) && string.IsNullOrWhiteSpace(_usuario.Nombre) && string.IsNullOrWhiteSpace(_usuario.Apellido)) {
             await DisplayAlert("Atencion","Llena toda la informacion","Ok");
             return;
         }

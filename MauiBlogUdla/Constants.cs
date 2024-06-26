@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,20 @@ namespace MauiBlogUdla
 {
     public static class Constants
     {
-        private const string DBFileNa
+        private const string DBFileName = "Datos.db3";
+        public const SQLiteOpenFlags Flags=
+            SQLiteOpenFlags.ReadWrite |
+            SQLiteOpenFlags.Create |
+            SQLiteOpenFlags.SharedCache;
+
+        public static string DatabasePath
+        {
+            get
+            {
+                return Path.Combine(FileSystem.AppDataDirectory, DBFileName);
+            }
+
+        }
     }
+   
 }
