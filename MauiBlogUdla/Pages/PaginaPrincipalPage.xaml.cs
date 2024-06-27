@@ -7,7 +7,7 @@ public partial class PaginaPrincipalPage : TabbedPage
 		InitializeComponent();
 		var pagina1 = new ListaFeedPage()
 		{
-			Title = "Feed",
+			Title = "Home",
 			IconImageSource = ""
 		};
 

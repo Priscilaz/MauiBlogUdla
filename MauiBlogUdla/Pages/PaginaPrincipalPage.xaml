@@ -7,5 +7,6 @@
             Title="PaginaPrincipalPage"
              NavigationPage.HasNavigationBar="False"
             >
+    
    
 </TabbedPage>
