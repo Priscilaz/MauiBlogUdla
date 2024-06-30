@@ -8,17 +8,25 @@ public partial class PaginaPrincipalPage : TabbedPage
 		var pagina1 = new ListaFeedPage()
 		{
 			Title = "Home",
-			IconImageSource = ""
+			IconImageSource = "dotnet_bot.png"
 		};
 
-        var pagina2 = new UsuarioPage()
+        var pagina2 = new PostPage()
         {
-            Title = "Usuario",
+            Title = "Post",
+			
             IconImageSource = ""
         };
+        var pagina3 = new UsuarioPage()
+        {
+            Title = "Usuario",
 
-		this.Children.Add(pagina1);
+            IconImageSource = "usuario.png"
+        };
+
+        this.Children.Add(pagina1);
         this.Children.Add(pagina2);
-		
-	}
+        this.Children.Add(pagina3);
+
+    }
 }

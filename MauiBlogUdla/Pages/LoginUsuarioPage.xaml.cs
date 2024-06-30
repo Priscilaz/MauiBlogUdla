@@ -18,8 +18,8 @@ public partial class LoginUsuarioPage : ContentPage
                 await DisplayAlert("Error", "Username o contraseña invalidos", "Ok");
                 return;
             }
-
             App.Usuario = usuario;
+            
             
            Navigation.PushAsync(new PaginaPrincipalPage());
         

@@ -7,5 +7,13 @@ public partial class ListaFeedPage : ContentPage
 		InitializeComponent();
 	}
 
-   
+    private void ficaButton_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void nodoButton_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
