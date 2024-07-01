@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MauiBlogUdla.Models
 {
-   public  class Comentario
+    public class Comentario
     {
         public string Contenido { get; set; }
         public DateTime Fecha { get; set; }

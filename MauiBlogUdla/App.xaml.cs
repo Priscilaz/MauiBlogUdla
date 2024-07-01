@@ -25,7 +25,6 @@ namespace MauiBlogUdla
         }
 
         public static Usuario Usuario { get;set; }
-        public static Post Posts { get;set; }    
         public App()
         {
             InitializeComponent();

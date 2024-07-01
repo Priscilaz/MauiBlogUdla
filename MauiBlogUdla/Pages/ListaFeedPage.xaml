@@ -6,6 +6,8 @@
                NavigationPage.HasNavigationBar="False"
              
              >
+    <ContentView x:Name="ContenArea">
+        <StackLayout>
     <VerticalStackLayout Margin="0,40,0,0">
         <Grid>
             <VerticalStackLayout 
@@ -91,4 +93,6 @@
             </VerticalStackLayout>
         </Grid>
     </VerticalStackLayout>
+        </StackLayout>
+    </ContentView>
 </ContentPage>
