@@ -11,33 +11,9 @@ namespace MauiBlogUdla.Pages
         public PostPage()
         {
             InitializeComponent();
-            _postData = new PostData();
-            LoadPosts();
+           
         }
 
-        private void LoadPosts()
-        {
-            List<Post> posts = _postData.GetPost(""); // Get all posts
-            PostsListView.ItemsSource = posts;
-        }
-
-        private async void OnPostTapped(object sender, ItemTappedEventArgs e)
-        {
-            var post = e.Item as Post;
-            if (post != null)
-            {
-               // await Navigation.PushAsync(new PostPage(post));
-            }
-        }
-
-        private void PostPicker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClickPostNodo(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -1,73 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiBlogUdla.Pages.PostPage"
-             Title="PostPage">
+             xmlns:local="clr-namespace:MauiBlogUdla.ViewModels"
+             x:Class="MauiBlogUdla.Pages.PostPage">
 
-    <ScrollView>
-        
-        <Grid BackgroundColor="white">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+    <ContentPage.BindingContext>
+        <local:PostViewModel />
+    </ContentPage.BindingContext>
 
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Input fields for new post -->
+            <Entry Placeholder="Titulo" Text="{Binding Titulo}" />
+            <Entry Placeholder="Contenido" Text="{Binding Contenido}" />
+            <Entry Placeholder="Comentario" Text="{Binding Comentario}" />
+            <Button Text="Añadir Post" Command="{Binding AddPostCommand}" />
 
-            <Grid Grid.Row="1" BackgroundColor="White">
-              
-                <VerticalStackLayout Margin="10,20,10,0" HorizontalOptions="Center">
-                    <StackLayout Padding="10">
-                        <Label Text="All Posts" FontAttributes="Bold" FontSize="Large" />
-                        <ListView x:Name="PostsListView" ItemTapped="OnPostTapped">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <StackLayout Padding="10">
-                                            <Label Text="{Binding Titulo}" FontSize="Medium" />
-                                            <Label Text="{Binding Contenido}" FontSize="Small" LineBreakMode="TailTruncation" MaxLines="3" />
-                                        </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackLayout>
-                    <Label FontAttributes="Bold"
-                            WidthRequest="233"
-                            HeightRequest="40"
-                            FontFamily="PoppinsBold"
-                            FontSize="15"
-                            Text="Seleccione el Post que desea leer"
-                            HorizontalOptions="CenterAndExpand"
-                            TextColor="DarkRed"
-                            HorizontalTextAlignment="Center"
-                            Margin="0,0,0,25" />
-
-                    <Picker x:Name="postPicker"
-                         TextColor="Black"
-                         FontFamily="Poppins-SemiBold"
-                         Title="Selecciona un post"
-                         WidthRequest="250"
-                         ItemsSource="{Binding Posts}"
-                         ItemDisplayBinding="{Binding Titulo}"
-                         SelectedIndexChanged="PostPicker_SelectedIndexChanged" />
-
-
-                    <Button BackgroundColor="#8D2232"
-                         WidthRequest="250"
-                         HeightRequest="50"
-                         FontFamily="PoppinsSemiBold"
-                         FontSize="Header"
-                         Text="Añadir Post"
-                         TextColor="White"
-                         Margin="0,20,0,80"
-                         Clicked="ClickPostNodo" />
-
-
-                </VerticalStackLayout>
-
-            </Grid>
-
-        </Grid>
-    </ScrollView>
+            <!-- List of posts -->
+            <ListView ItemsSource="{Binding Posts}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Titulo}" FontSize="Medium" />
+                                <Label Text="{Binding Contenido}" FontSize="Small" />
+                                <Label Text="{Binding Comentario}" FontSize="Small" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

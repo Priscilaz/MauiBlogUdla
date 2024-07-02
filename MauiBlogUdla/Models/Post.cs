@@ -9,10 +9,11 @@ namespace MauiBlogUdla.Models
 {
     public class Post
     {
-        [PrimaryKey,AutoIncrement]
-        public int Id { get; set; }   
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Titulo { get; set; }
         public string Contenido { get; set; }
-        public List<Comentario> Comentarios { get; set; } = new List<Comentario>();
+        public string Comentario { get; set; }
+      //  public List<Comentario> Comentarios { get; set; } = new List<Comentario>();
     }
 }

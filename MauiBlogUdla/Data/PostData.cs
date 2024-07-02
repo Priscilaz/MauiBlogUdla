@@ -10,11 +10,11 @@ namespace MauiBlogUdla.Data
 {
     public class PostData
     {
+        
+        private static readonly string _conexionDBPath= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Post.db3");
         private static SQLiteConnection _conexionDB;
         private static List<Post> _posts = new List<Post>();
 
-        private static readonly string _conexionDBPath= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Post.db3");
-       
 
         public PostData()
         {
@@ -25,6 +25,10 @@ namespace MauiBlogUdla.Data
         public List<Post> GetPost(string postId)
         {
             return  _conexionDB.Table<Post>().Where(x=>x.Titulo==postId).ToList();
+        }
+        public List<Post> GetAllPosts()
+        {
+            return _conexionDB.Table<Post>().ToList();
         }
         public void GuardarPost(Post post)
         {
